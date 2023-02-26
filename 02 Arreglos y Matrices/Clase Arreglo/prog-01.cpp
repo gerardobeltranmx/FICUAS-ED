@@ -3,7 +3,7 @@
 using namespace std;
 
 
-#define longitud 1000
+#define longitud 500
 class Arreglo {
     private: 
         int datos[longitud];
