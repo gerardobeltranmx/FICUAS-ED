@@ -41,7 +41,7 @@ class Arreglo {
         return menor;
        }
 
-     int ObtenerElementoMayor(){
+    int ObtenerElementoMayor(){
         int mayor = ObtenerElemento(0);
           
         for (int i=1; i < ObtenerNumeroElementos(); i++){
@@ -52,7 +52,7 @@ class Arreglo {
         return mayor;
        }
        
-int ObtenerElementoPosicion(int dato){
+    int ObtenerElementoPosicion(int dato){
         int mayor = ObtenerElemento(0);
         int posicion=-1; 
         for (int i=0; i < ObtenerNumeroElementos() and posicion==-1; i++){
@@ -61,21 +61,21 @@ int ObtenerElementoPosicion(int dato){
             }
         }
         return posicion;
-       }
+    }
      
 
 
-       int ObtenerSumatoria(){
+    int ObtenerSumatoria(){
         int suma =0;
         for (int i=0; i < ObtenerNumeroElementos(); i++){
             suma += ObtenerElemento(i);
         }
         return suma;
-       }
+    }
        
-       double ObtenerPromedio (){
+    double ObtenerPromedio (){
            return (double) ObtenerSumatoria() / ObtenerNumeroElementos();
-       }
+    }
 
 };
 
@@ -100,7 +100,6 @@ int main()
     for (int i=0; i < edades.ObtenerNumeroElementos(); i++){
         cout << edades.ObtenerElemento(i) << " ";
     }
-    
     
     return 0;
 }
