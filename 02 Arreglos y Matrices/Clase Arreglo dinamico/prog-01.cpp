@@ -71,7 +71,21 @@ class Arreglo {
         }
         return posicion;
     }
-     
+
+    void OrdenarPorIntercambio(){
+        // Metodo de la Burbuja
+
+        int i, j;  
+        for(i=0; i<ObtenerNumeroElementos()-1; i++){
+            for(j=0; j<ObtenerNumeroElementos()-1-i; j++){
+                if (datos[j]>datos[j+1]){
+                    int aux=datos[j];
+                    datos[j]=datos[j+1];
+                    datos[j+1]=aux; 
+                }
+            }
+        }        
+    } 
 
 
     int ObtenerSumatoria(){
