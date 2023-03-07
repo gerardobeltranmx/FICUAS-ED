@@ -11,6 +11,7 @@ class Arreglo {
         int longitud;
     public:
     Arreglo (int tam){
+        ultimo=-1;
         datos = new T[tam];
         longitud = tam;
     } 
@@ -19,8 +20,8 @@ class Arreglo {
     }
     Arreglo(){
         ultimo = -1;
-        datos = new T[100];
-        longitud = 100;
+        datos = new T[1000000];
+        longitud = 1000000;
         
     }
     void AgregarElemento(T dato){
@@ -89,17 +90,17 @@ class Arreglo {
 
 };
 
-int main()int
-{
     
+int main()
+{
     int posicion, N, C;
     //cout << "Cantidad de vasos y canicas: ";
     cin >> N >> C;
     
-    Arreglo <int> vasos(N);
+    Arreglo <int> vasos;
 
     for (int i=0; i< N; i++){
-        vasos.AgregarElemento(0);
+        vasos.CambiarElemento(i,0);
     }
     
     for (int i=0; i < C; i++ ){
@@ -108,9 +109,10 @@ int main()int
                 vasos.ObtenerElemento(posicion-1) + 1);
     }
 
-    for (int i=0; i<vasos.ObtenerNumeroElementos(); i++){
+    for (int i=0; i< N; i++){
         cout << vasos.ObtenerElemento(i) << endl;
     }
+
 
     return 0;
 }
