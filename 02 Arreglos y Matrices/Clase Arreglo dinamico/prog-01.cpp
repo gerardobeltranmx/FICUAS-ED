@@ -9,6 +9,7 @@ class Arreglo {
         int longitud;
     public:
     Arreglo (int tam){
+        ultimo = -1;
         datos = new int[tam];
         longitud = tam;
     } 
@@ -104,7 +105,7 @@ class Arreglo {
 
 int main()
 {
-    Arreglo edades;
+    Arreglo edades(20);
     
     edades.AgregarElemento(4);
     edades.AgregarElemento(56);
@@ -112,14 +113,14 @@ int main()
     edades.AgregarElemento(14);
     edades.AgregarElemento(23);
     
-   /* cout << edades.ObtenerNumeroElementos() << endl;
+   cout << edades.ObtenerNumeroElementos() << endl;
     cout << edades.ObtenerLongitudMaxima() << endl;
     cout << edades.ObtenerSumatoria() << endl;
     cout << edades.ObtenerPromedio() << endl;
     cout << edades.ObtenerElementoMenor() << endl;
     cout << edades.ObtenerElementoMayor() << endl;
     cout << edades.ObtenerElementoPosicion(43) << endl;
-    */
+    
     edades.OrdenarPorIntercambio();
     for (int i=0; i < edades.ObtenerNumeroElementos(); i++){
         cout << edades.ObtenerElemento(i) << " ";
