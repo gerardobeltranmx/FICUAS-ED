@@ -1,5 +1,5 @@
 #include <iostream>
-
+// http://lwh.free.fr/
 using namespace std;
 
  template <class T>
