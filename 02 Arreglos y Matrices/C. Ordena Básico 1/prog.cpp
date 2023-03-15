@@ -70,6 +70,37 @@ using namespace std;
                     datos[k+1]=aux;
         }
 
+        void quicksort(int a[], int primero, int ultimo)
+{
+    int i, j, central;
+    int pivote, tmp;
+    central = (primero + ultimo)/2;
+    pivote = a[central];
+    i = primero;
+    j = ultimo;
+    do {
+        while (a[i] < pivote) i++;
+        while (a[j] > pivote) j--;
+        if (i<=j)
+        {
+            tmp = a[i];
+            a[i] = a[j];
+            a[j] = tmp; /* intercambia a[i] con a[j] */
+            i++;
+            j--;
+        }
+    }while (i <= j);
+    
+    if (primero < j) /* mismo proceso con sublista izqda */
+    quicksort(a, primero, j);
+    if (i < ultimo)/* mismo proceso con sublista drcha */
+    quicksort(a, i, ultimo); 
+}
+void QuickSort(int datos[],int tam ){
+    quicksort(datos, 0, tam-1);
+}
+
+
 
         }
 };
