@@ -49,6 +49,9 @@ class Pila{
     T obtenerPorPosicion(int pos){
         return elementos[pos];
     }
+    int tamaño(){
+        return tam;
+    }
 };
 
 int main(){
@@ -70,6 +73,7 @@ int main(){
 
     cout << miPila.esVacia() << endl;
 
+    cout << miPila.tamaño() << endl;
 
 
     
