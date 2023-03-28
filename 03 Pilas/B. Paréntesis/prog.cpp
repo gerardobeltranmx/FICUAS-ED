@@ -66,7 +66,6 @@ int main()
    tam = strlen(cadena); // tamaño de la cadena
    Pila <char> miPila(tam);   // creamos la pila
    bool error = false;
-
    for (int i=0; i< tam and error==false; i++) {
         if (cadena[i]=='('){
             miPila.agregar(cadena[i]);
