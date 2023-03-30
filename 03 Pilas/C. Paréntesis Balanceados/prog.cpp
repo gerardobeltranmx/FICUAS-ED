@@ -60,8 +60,11 @@ int main()
 {
     Pila <char> miPila(1000);
     char cadena[1000];
+    int N;
 
+    cin >> N;
 
+   for (int k=0; k<N; k++){ 
 
    cin >> cadena;
 
@@ -98,7 +101,7 @@ int main()
             cout << "SI"<< endl;
         else
             cout << "NO" << endl;    
-
+    }
 
 
 
