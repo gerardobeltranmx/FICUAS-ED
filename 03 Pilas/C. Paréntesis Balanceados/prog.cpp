@@ -52,10 +52,12 @@ class Pila{
     T obtenerPorPosicion(int pos){
         return elementos[pos];
     }
-    int tamaño(){
+    int tamano(){
         return tam;
     }
 };
+
+
 int main()
 {
     Pila <char> miPila(1000);
@@ -78,7 +80,7 @@ int main()
         }    
         else{
             if (!miPila.esVacia()){
-                abierto = miPila.Obtener();
+                abierto = miPila.extraer();
                 switch(abierto){
                     case '(':
                         if (c!=')') error=true;
@@ -97,15 +99,16 @@ int main()
                 error=true;
             }
         }
-        if (error==false and miPila.vacia())
+
+      
+    } // fin i
+     if (error==false and miPila.esVacia())
             cout << "SI"<< endl;
         else
             cout << "NO" << endl;    
-    }
 
 
-
-    }
+    }// fin k
 
 
 
