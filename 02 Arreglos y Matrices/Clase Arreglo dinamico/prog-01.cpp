@@ -101,6 +101,34 @@ class Arreglo {
            return (double) ObtenerSumatoria() / ObtenerNumeroElementos();
     }
 
+void OrdenarInsercionAsc(){
+     int i, k, aux;
+     for(i=1; i<ObtenerNumeroElementos(); i++){
+        aux=datos[i];
+        k=i-1;
+        while(k>=0 && aux<datos[k]){
+              datos[k+1]=datos[k] ;
+               k=k-1;
+         }
+         datos[k+1]=aux;
+     }
+}
+
+ 
+    void OrdenarseleccionAsc (){
+        int menor,aux, i, j;
+        for(i=0;i<ObtenerNumeroElementos(); i++){
+            menor=i;
+            for(j=i+1; j< ObtenerNumeroElementos(); j++) { // Se busca el menor
+                if(datos[j]< datos[menor])
+                menor=j;
+        }
+        aux= datos[i]; // Se intercambian los elementos
+        datos[i]=datos[menor];
+        datos[menor]=aux;
+  }
+}
+
 };
 
 int main()
@@ -120,11 +148,17 @@ int main()
     cout << edades.ObtenerElementoMenor() << endl;
     cout << edades.ObtenerElementoMayor() << endl;
     cout << edades.ObtenerElementoPosicion(43) << endl;
+<<<<<<< HEAD
     
     edades.OrdenarPorIntercambio();
+=======
+    */
+    edades.OrdenarseleccionAsc();
+>>>>>>> ebf9b06 (--)
     for (int i=0; i < edades.ObtenerNumeroElementos(); i++){
         cout << edades.ObtenerElemento(i) << " ";
     }
-    
+   
+
     return 0;
 }
