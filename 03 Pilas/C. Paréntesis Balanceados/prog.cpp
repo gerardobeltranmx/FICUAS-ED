@@ -60,10 +60,8 @@ class Pila{
 
 int main()
 {
-    Pila <char> miPila(1000);
-    char cadena[1000];
+    char cadena[1001];
     int N;
-
     cin >> N;
 
    for (int k=0; k<N; k++){ 
@@ -71,6 +69,9 @@ int main()
    cin >> cadena;
 
    int tam = strlen(cadena); 
+
+   Pila <char> miPila(tam);
+
    bool error = false;
    char abierto; 
     for (int i=0; i <tam and error==false; i++){
@@ -91,9 +92,7 @@ int main()
                     case '{':
                         if (c!='}') error=true;
                         break;
-                      
                 }
-
             }    
             else{
                 error=true;
