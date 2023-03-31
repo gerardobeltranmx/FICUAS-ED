@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cstring>
 
-
 using namespace std;
 
 template <class T>
