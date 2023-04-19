@@ -7,7 +7,7 @@ class Cola{
     int frente, final;
     T *elementos;
 
-    //Iniciar Cola
+    // rrIniciar Cola
     public:
     Cola(int N){
       elementos= new T[N];
