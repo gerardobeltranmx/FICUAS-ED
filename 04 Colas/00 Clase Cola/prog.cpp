@@ -59,7 +59,7 @@ class Cola{
         return elementos[pos];
     }
     int tamaño(){
-        return final+1;
+        return tam;
     }
 };
 
