@@ -81,7 +81,7 @@ class Cola{
        int i;
        T dato = elementos[frente];
 	
-	    for(i=0; i<final-1; i++)
+	    for(i=0; i<final; i++)
 		    elementos[i]=elementos[i+1];
 	
 	    final--;
@@ -123,8 +123,8 @@ int main()
    char tipo;
    string nombre;
    cin >> N; // numero de eventos
-   Pila <string> FilaPreferente(N); // Fila para cliente buenos
-   Cola <string> FilaMorosos(N);    // Fila para clientes malos
+   Cola <string> FilaPreferente(N); // Fila para cliente buenos
+   Pila <string> FilaMorosos(N);    // Fila para clientes malos
 
    for (int i=0; i < N; i++){
         cin >> tipo; // posibles casos: E o A
@@ -143,7 +143,7 @@ int main()
                 else 
                     nombre = FilaMorosos.extraer();
                 
-                cout << nombre << endl;
+                cout << "*" <<nombre << endl;
                 break; 
         }
     }
