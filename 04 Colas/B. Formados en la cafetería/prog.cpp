@@ -78,13 +78,10 @@ int main()
         }
         else { // Se atiende
             if (Trabajadores.esVacia()==false) // se atiende a trabajadores si hay en espera
-                cout << Trabajadores.extraer() << endl;
+                cout <<Trabajadores.extraer() << endl;
             else // se atiende a estudiantes si no hay trabajadores en espera
                 cout << Estudiantes.extraer() << endl;    
         }
     }
- 
-
     return 0;
-
 }
