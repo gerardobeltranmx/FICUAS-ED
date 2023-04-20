@@ -1,6 +1,68 @@
 #include <iostream>
 using namespace std;
+// Clase Cola
+
+template <class T>
+class Cola{
+    int tam;
+    int frente, final;
+    T *elementos;
+
+    //Iniciar Cola
+    public:
+    Cola(int N){
+      elementos= new T[N];
+      tam=N;
+	  frente=0;
+	  final = -1;
+	  
+    }       
+    // Agregar un dato a la cola
+    void Agregar(T dato){
+        final++;
+	    elementos[final]=dato;
+
+    }
+    // extraer un dato de la cola
+    T Extraer(){
+       int i;
+       T dato = elementos[frente];
+            for(i=0; i<final; i++)
+                elementos[i]=elementos[i+1];
+            final--;
+            return dato;
+
+    }
+    //Obtener dato del tope sin extraerlo
+    T Cima(){
+        return elementos[frente];
+    }
+
+    //Determina si la Cola esta vacía
+    bool EsVacia(){
+        return (final==-1)?true:false;
+    }
+
+    //Determina si la Cola esta llena
+    bool EsLlena(){
+        return (final==tam-1)?true:false;
+    }
+
+    //Obtiene numero de elementos de la Cola
+    int NumElementos(){
+        return final+1;
+    }
+    //Obtiene un elemento de la Cola de alguna posición 
+    T ObtenerPorPosicicion(int pos){
+        return elementos[pos];
+    }
+    int Tamano(){
+        return tam;
+    }
+};
+
 // Clase Pila
+
 template <class T>
 class Pila{
     int tam;
@@ -15,107 +77,45 @@ class Pila{
 	  tope=-1;
     }       
     // Agregar un dato a la Pila
-    void agregar(T dato){
+    void Agregar(T dato){
         tope++;
         elementos[tope]=dato;
     }
     // extraer un dato de la pila
-    T extraer(){
+    T Extraer(){
         T dato;
         dato = elementos[tope];
         tope--;
         return dato;
     }
     //Obtener dato del tope sin extraerlo
-    T cima(){
+    T Cima(){
         return elementos[tope];
     }
 
     //Determina si la Pila esta vacía
-    bool esVacia(){
+    bool EsVacia(){
         return(tope==-1)?true:false;
     }
 
     //Determina si la Pila esta llena
-    bool esLlena(){
+    bool EsLlena(){
         return (tope==tam-1)?true:false;
     }
 
     //Obtiene numero de elementos de la Pila
-    int numElementos(){
+    int NumElementos(){
         return tope+1;
     }
     //Obtiene un elemento de la Pila de alguna posición 
-    T obtenerPorPosicion(int pos){
+    T ObtenerPorPosicicion(int pos){
         return elementos[pos];
     }
-    int tamaño(){
+    int Tamano(){
         return tam;
     }
 };
 
-// Clase Cola
-template <class T>
-class Cola{
-    int tam;
-    int frente, final;
-    T *elementos;
-
-    // rrIniciar Cola
-    public:
-    Cola(int N){
-      elementos= new T[N];
-      tam=N;
-	  frente=0;
-	  final = -1;
-	  
-    }       
-    // Agregar un dato a la cola
-    void agregar(T dato){
-        final++;
-	    elementos[final]=dato;
-
-    }
-    // extraer un dato de la cola
-    T extraer(){
-       int i;
-       T dato = elementos[frente];
-	
-	    for(i=0; i<final; i++)
-		    elementos[i]=elementos[i+1];
-	
-	    final--;
-	
-	return dato;
-
-    }
-    //Obtener dato del tope sin extraerlo
-    T cima(){
-        return elementos[frente];
-    }
-
-    //Determina si la Cola esta vacía
-    bool esVacia(){
-        return (final==-1)?true:false;
-    }
-
-    //Determina si la Cola esta llena
-    bool esLlena(){
-        return (final==tam-1)?true:false;
-    }
-
-    //Obtiene numero de elementos de la Cola
-    int numElementos(){
-        return final+1;
-    }
-    //Obtiene un elemento de la Cola de alguna posición 
-    T obtenerPorPosicion(int pos){
-        return elementos[pos];
-    }
-    int tamaño(){
-        return tam;
-    }
-};
 
 int main()
 {
@@ -132,18 +132,18 @@ int main()
             case 'E':  // Cliente que va llegando al banco
                 cin >> fila >> nombre;
                 if (fila == 1)
-                    FilaPreferente.agregar(nombre);
+                    FilaPreferente.Agregar(nombre);
                 else 
-                    FilaMorosos.agregar(nombre);            
+                    FilaMorosos.Agregar(nombre);            
                 break;
             case 'A' : // Cliente que fue antendido
                 cin >> fila;
                 if (fila == 1)
-                    nombre = FilaPreferente.extraer();
+                    nombre = FilaPreferente.Extraer();
                 else 
-                    nombre = FilaMorosos.extraer();
+                    nombre = FilaMorosos.Extraer();
                 
-                cout << "*" <<nombre << endl;
+                cout  <<nombre << endl;
                 break; 
         }
     }
