@@ -14,14 +14,12 @@ class Cola{
       elementos= new T[N];
       tam=N;
 	  frente=0;
-	  final = -1;
-	  
+	  final = -1;  
     }       
     // Agregar un dato a la cola
     void agregar(T dato){
         final++;
 	    elementos[final]=dato;
-
     }
     // extraer un dato de la cola
     T extraer(){
@@ -31,7 +29,6 @@ class Cola{
                 elementos[i]=elementos[i+1];
             final--;
             return dato;
-
     }
     //Obtener dato del tope sin extraerlo
     T cima(){
@@ -62,7 +59,6 @@ class Cola{
 };
 
 // Clase Pila
-
 template <class T>
 class Pila{
     int tam;
