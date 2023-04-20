@@ -15,13 +15,13 @@ class Pila{
 	  tope=-1;
     }       
     // Agregar un dato a la Pila
-    void agregar(int dato){
+    void agregar(T dato){
         tope++;
         elementos[tope]=dato;
     }
     // extraer un dato de la pila
     T extraer(){
-        int dato;
+        T dato;
         dato = elementos[tope];
         tope--;
         return dato;
@@ -46,10 +46,10 @@ class Pila{
         return tope+1;
     }
     //Obtiene un elemento de la Pila de alguna posición 
-    T obtenerPorPosicion(int pos){
+    T obtenerPorPosicicion(int pos){
         return elementos[pos];
     }
-    int tamaño(){
+    int tamano(){
         return tam;
     }
 };
@@ -73,7 +73,7 @@ int main(){
 
     cout << miPila.esVacia() << endl;
 
-    cout << miPila.tamaño() << endl;
+    cout << miPila.tamano() << endl;
 
 
     

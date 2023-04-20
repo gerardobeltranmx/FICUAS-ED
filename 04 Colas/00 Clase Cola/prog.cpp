@@ -7,7 +7,7 @@ class Cola{
     int frente, final;
     T *elementos;
 
-    // rrIniciar Cola
+    //Iniciar Cola
     public:
     Cola(int N){
       elementos= new T[N];
@@ -17,7 +17,7 @@ class Cola{
 	  
     }       
     // Agregar un dato a la cola
-    void agregar(int dato){
+    void agregar(T dato){
         final++;
 	    elementos[final]=dato;
 
@@ -26,13 +26,10 @@ class Cola{
     T extraer(){
        int i;
        T dato = elementos[frente];
-	
-	    for(i=0; i<final-1; i++)
-		    elementos[i]=elementos[i+1];
-	
-	    final--;
-	
-	return dato;
+            for(i=0; i<final; i++)
+                elementos[i]=elementos[i+1];
+            final--;
+            return dato;
 
     }
     //Obtener dato del tope sin extraerlo
@@ -55,10 +52,10 @@ class Cola{
         return final+1;
     }
     //Obtiene un elemento de la Cola de alguna posición 
-    T obtenerPorPosicion(int pos){
+    T obtenerPorPosicicion(int pos){
         return elementos[pos];
     }
-    int tamaño(){
+    int tamano(){
         return tam;
     }
 };
@@ -82,7 +79,7 @@ int main(){
 
     cout << misDatos.esVacia() << endl;
 
-    cout << misDatos.tamaño() << endl;
+    cout << misDatos.tamano() << endl;
 
 
     

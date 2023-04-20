@@ -18,13 +18,13 @@ class Cola{
 	  
     }       
     // Agregar un dato a la cola
-    void Agregar(T dato){
+    void agregar(T dato){
         final++;
 	    elementos[final]=dato;
 
     }
     // extraer un dato de la cola
-    T Extraer(){
+    T extraer(){
        int i;
        T dato = elementos[frente];
             for(i=0; i<final; i++)
@@ -34,29 +34,29 @@ class Cola{
 
     }
     //Obtener dato del tope sin extraerlo
-    T Cima(){
+    T cima(){
         return elementos[frente];
     }
 
     //Determina si la Cola esta vacía
-    bool EsVacia(){
+    bool esVacia(){
         return (final==-1)?true:false;
     }
 
     //Determina si la Cola esta llena
-    bool EsLlena(){
+    bool esLlena(){
         return (final==tam-1)?true:false;
     }
 
     //Obtiene numero de elementos de la Cola
-    int NumElementos(){
+    int numElementos(){
         return final+1;
     }
     //Obtiene un elemento de la Cola de alguna posición 
-    T ObtenerPorPosicicion(int pos){
+    T obtenerPorPosicicion(int pos){
         return elementos[pos];
     }
-    int Tamano(){
+    int tamano(){
         return tam;
     }
 };
@@ -77,41 +77,41 @@ class Pila{
 	  tope=-1;
     }       
     // Agregar un dato a la Pila
-    void Agregar(T dato){
+    void agregar(T dato){
         tope++;
         elementos[tope]=dato;
     }
     // extraer un dato de la pila
-    T Extraer(){
+    T extraer(){
         T dato;
         dato = elementos[tope];
         tope--;
         return dato;
     }
     //Obtener dato del tope sin extraerlo
-    T Cima(){
+    T cima(){
         return elementos[tope];
     }
 
     //Determina si la Pila esta vacía
-    bool EsVacia(){
+    bool esVacia(){
         return(tope==-1)?true:false;
     }
 
     //Determina si la Pila esta llena
-    bool EsLlena(){
+    bool esLlena(){
         return (tope==tam-1)?true:false;
     }
 
     //Obtiene numero de elementos de la Pila
-    int NumElementos(){
+    int numElementos(){
         return tope+1;
     }
     //Obtiene un elemento de la Pila de alguna posición 
-    T ObtenerPorPosicicion(int pos){
+    T obtenerPorPosicicion(int pos){
         return elementos[pos];
     }
-    int Tamano(){
+    int tamano(){
         return tam;
     }
 };
@@ -132,16 +132,16 @@ int main()
             case 'E':  // Cliente que va llegando al banco
                 cin >> fila >> nombre;
                 if (fila == 1)
-                    FilaPreferente.Agregar(nombre);
+                    FilaPreferente.agregar(nombre);
                 else 
-                    FilaMorosos.Agregar(nombre);            
+                    FilaMorosos.agregar(nombre);            
                 break;
             case 'A' : // Cliente que fue antendido
                 cin >> fila;
                 if (fila == 1)
-                    nombre = FilaPreferente.Extraer();
+                    nombre = FilaPreferente.extraer();
                 else 
-                    nombre = FilaMorosos.Extraer();
+                    nombre = FilaMorosos.extraer();
                 
                 cout  <<nombre << endl;
                 break; 
