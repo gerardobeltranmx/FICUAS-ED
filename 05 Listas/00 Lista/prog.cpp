@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Template <class T>
+template <class T>
 class Lista {
 
     class Nodo{
@@ -27,10 +27,13 @@ class Lista {
     }
 
     T eliminarInicio(){
+        T dato;
         Nodo *aux;
         aux = Raiz;
         Raiz = Raiz->enl;
+        dato = aux->info;
         delete aux;
+        return dato;
     }
 }
 
