@@ -51,11 +51,32 @@ class Lista {
           // colocamos al final 
           aux->enl = nuevo;
        }     
-
-
-
     }
+    T eliminarFinal(){
+        Nodo *act, *sig;
+        T dato;
+        act = Raiz;
+        sig = act->enl;
 
+        if (sig==NULL){ // solo un nodo
+            eliminarInicio();
+        }
+        else if (sig->enl == NULL){ // solo 2 nodos
+            dato = sig->info;
+            delete sig;
+            act->enl =NULL; 
+        }
+        else { // 3 o mas nodos
+            while (sig->enl != NULL){
+                act = sig;
+                sig = sig->enl;
+            }
+            dato = sig->info;
+            delete sig;
+            act->enl =NULL;
+        }
+        return dato;
+    }
 
     void imprimir(){
         Nodo *aux;
@@ -82,14 +103,14 @@ int main()
     miLista.agregarFinal(20);
     miLista.agregarFinal(30);
     miLista.agregarFinal(40);
-    miLista.agregarInicio(54);
-    
+    miLista.agregarInicio(54); 
     miLista.imprimir();
-    cout << "Se elimino el: " << miLista.eliminarInicio()<< endl;
+    cout << "Se elimino del inicio el: " << miLista.eliminarInicio()<< endl;
     miLista.imprimir();
-    cout << "Se elimino el: " << miLista.eliminarInicio()<< endl;
+    cout << "Se elimino  del inicio el: " << miLista.eliminarInicio()<< endl;
     miLista.imprimir();
-
+    cout << "Se elimino del final el: " << miLista.eliminarFinal()<< endl;
+    miLista.imprimir();
         
     
 
