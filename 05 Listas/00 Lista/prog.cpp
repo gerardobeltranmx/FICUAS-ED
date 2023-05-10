@@ -87,6 +87,21 @@ class Lista {
         return dato;
     }
 
+ int numElementos (){
+    Nodo *inicio;
+    inicio = Raiz;
+    int contador=0;
+    while (inicio!=NULL){
+        inicio=inicio->enl;
+        contador++;
+    }
+    return contador;
+    }
+    bool esVacia(){
+        return Raiz==NULL?true:false;
+    }
+
+
     void imprimir (){
     Nodo *inicio;
     inicio = Raiz;
@@ -105,6 +120,7 @@ int main()
 {
 
     Lista <int> miLista;
+   cout << miLista.esVacia() << endl; 
    miLista.agregarFinal(1);
 
     miLista.agregarInicio(6);
@@ -112,6 +128,8 @@ int main()
     miLista.agregarInicio(7); 
     miLista.agregarFinal(10);
     miLista.imprimir();
+    cout << "Num. Elementos: "<< miLista.numElementos()<< endl;
+
     cout << "Sale: " << miLista.eliminarFinal()<< endl;
    // cout << "Sale: " <<miLista.eliminarInicio()<< endl;
    miLista.imprimir();
@@ -121,7 +139,9 @@ int main()
    miLista.imprimir();
     cout << "Sale: " << miLista.eliminarFinal()<< endl;
    miLista.imprimir();
-   
+       cout << "Num. Elementos: "<< miLista.numElementos()<< endl;
+   cout << miLista.esVacia() << endl; 
+
     // cout << "Sale: " <<miLista.eliminarFinal()<< endl;
     
 
