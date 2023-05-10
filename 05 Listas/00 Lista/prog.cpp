@@ -83,7 +83,6 @@ class Lista {
             delete sig;
             act->enl =NULL;
         }
-
         return dato;
     }
 
