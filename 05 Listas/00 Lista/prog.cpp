@@ -100,8 +100,6 @@ class Lista {
     bool esVacia(){
         return Raiz==NULL?true:false;
     }
-
-
     void imprimir (){
     Nodo *inicio;
     inicio = Raiz;
