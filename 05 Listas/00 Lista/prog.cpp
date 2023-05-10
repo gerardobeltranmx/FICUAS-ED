@@ -120,7 +120,7 @@ int main()
 {
 
     Lista <int> miLista;
-   cout << miLista.esVacia() << endl; 
+
    miLista.agregarFinal(1);
 
     miLista.agregarInicio(6);
