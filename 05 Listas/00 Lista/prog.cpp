@@ -115,7 +115,7 @@ class Lista {
 
 int main()
 {
-QQ
+
     Lista <int> miLista;
 // llamadas a las funciones
     miLista.agregarFinal(1);
