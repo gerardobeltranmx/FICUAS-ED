@@ -15,6 +15,16 @@ class Lista {
     Lista(){
         Raiz = NULL;
     }
+    ~Lista(){
+     Nodo *temp, *aux = Raiz;
+
+    while(aux!=NULL){
+        temp=aux;
+        delete aux;
+        aux=temp->enl;
+    }
+
+    }
 
     Nodo *nuevoNodo(T dato){
         Nodo *nodo;
@@ -83,34 +93,30 @@ class Lista {
 
 
  bool eliminarValor(T dato){
-        Nodo  *act, *sig;
-        bool estado=false;
-        T dato;
+        Nodo  *act, *ant;
+        bool enc=false;
         act = Raiz;
-        sig = Raiz->enl;
-        if(sig==NULL and act->info==dato){
-             
-            eliminarInicio();
-           estado = true;
-        }
-        else {
+        ant = NULL;
            
-            while(sig->enl!=NULL and enc == false){
-
-                if (act->info==dato)
-                    enc = true;
-                else {    
-                    act = sig;
-                    sig = sig->enl;
-                }
-            }
-            if (enc){
-            aux = sig;
-            delete sig;
-            act->enl =NULL;
-            }
+        while(act!=NULL and enc == false){
+           if (act->info==dato)
+                enc=true;
+           else {
+            ant = act;    
+            act = act->enl;
+           }
         }
-        return dato;
+
+         if (enc==true){
+            if (ant==NULL)
+                Raiz=act->enl; // lo encontro en el primero 
+            else 
+                ant->enl = act->enl; // al anterior lo enlaza con el siguiente de actual
+            
+            delete act; // borra el actual
+        } 
+        return enc;
+        
     }
 
 
@@ -154,7 +160,12 @@ int main()
     miLista.agregarInicio(7); 
     miLista.agregarFinal(10);
     miLista.imprimir();
-    cout << "Num. Elementos: "<< miLista.numElementos()<< endl;
+
+
+    cout << "Sale: " << miLista.eliminarValor(8)<< endl;
+    miLista.imprimir();
+
+   /*  cout << "Num. Elementos: "<< miLista.numElementos()<< endl;
 
     cout << "Sale: " << miLista.eliminarFinal()<< endl;
    // cout << "Sale: " <<miLista.eliminarInicio()<< endl;
@@ -165,9 +176,12 @@ int main()
    miLista.imprimir();
     cout << "Sale: " << miLista.eliminarFinal()<< endl;
    miLista.imprimir();
+    cout << "Sale: " << miLista.eliminarValor(7)<< endl;
+   
+   miLista.imprimir();
        cout << "Num. Elementos: "<< miLista.numElementos()<< endl;
    cout << miLista.esVacia() << endl; 
-
+ */
     // cout << "Sale: " <<miLista.eliminarFinal()<< endl;
     
 
