@@ -118,8 +118,7 @@ int main()
 
     Lista <int> miLista;
 
-   miLista.agregarFinal(1);
-
+    miLista.agregarFinal(1);
     miLista.agregarInicio(6);
     miLista.agregarInicio(8);
     miLista.agregarInicio(7); 
