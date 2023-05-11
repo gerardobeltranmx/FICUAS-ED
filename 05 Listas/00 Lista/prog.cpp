@@ -115,7 +115,7 @@ class Lista {
 
 int main()
 {
-
+QQ
     Lista <int> miLista;
 
     miLista.agregarFinal(1);
