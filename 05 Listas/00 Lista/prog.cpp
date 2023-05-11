@@ -1,10 +1,8 @@
 #include <iostream>
-
 using namespace std;
 
 template <class T>
 class Lista {
-
     class Nodo{
        public:
         T info;
@@ -18,35 +16,31 @@ class Lista {
         Raiz = NULL;
     }
 
+    Nodo *nuevoNodo(T dato){
+        Nodo *nodo;
+        nodo = new Nodo;
+        nodo->info = dato;
+        nodo->enl = NULL;
+        return nodo;
+    }
     void agregarInicio(T dato){
-        Nodo *nuevo;
-        // crear nuevo nodo
-        nuevo = new Nodo;
-        nuevo->info = dato;
-         //  nuevo->enl = NULL;
+        Nodo *nuevo = nuevoNodo(dato);
         nuevo->enl = Raiz;
         Raiz = nuevo;
     }
 
       void agregarFinal(T dato){
-        Nodo *nuevo;
-       
-       
-       if (Raiz!=NULL){
-        // crear nuevo nodo
-        nuevo = new Nodo;
-        nuevo->info = dato;
-         //  nuevo->enl = NULL;
-        Nodo *temp=Raiz;
-        while (temp->enl!=NULL)
-            temp = temp->enl;
-       temp->enl = nuevo;
+        
+        if (Raiz!=NULL){
+            Nodo *nuevo = nuevoNodo(dato);
+            Nodo *temp=Raiz;
+            while (temp->enl!=NULL)
+                temp = temp->enl;
+            temp->enl = nuevo;
        }
        else   
-          agregarInicio(dato);
+            agregarInicio(dato);
     }
-
-    
 
     T eliminarInicio(){
         Nodo *aux;
@@ -115,7 +109,6 @@ class Lista {
 
 int main()
 {
-
     Lista <int> miLista;
 // llamadas a las funciones
     miLista.agregarFinal(1);
