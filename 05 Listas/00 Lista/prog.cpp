@@ -117,7 +117,7 @@ int main()
 {
 QQ
     Lista <int> miLista;
-
+// llamadas a las funciones
     miLista.agregarFinal(1);
     miLista.agregarInicio(6);
     miLista.agregarInicio(8);
