@@ -80,43 +80,6 @@ class Lista {
         return dato;
     }
 
-
-
- bool eliminarValor(T dato){
-        Nodo  *act, *sig;
-        bool estado=false;
-        T dato;
-        act = Raiz;
-        sig = Raiz->enl;
-        if(sig==NULL and act->info==dato){
-             
-            eliminarInicio();
-           estado = true;
-        }
-        else {
-           
-            while(sig->enl!=NULL and enc == false){
-
-                if (act->info==dato)
-                    enc = true;
-                else {    
-                    act = sig;
-                    sig = sig->enl;
-                }
-            }
-            if (enc){
-            aux = sig;
-            delete sig;
-            act->enl =NULL;
-            }
-        }
-        return dato;
-    }
-
-
-
-
-
  int numElementos (){
     Nodo *inicio;
     inicio = Raiz;
@@ -141,35 +104,31 @@ class Lista {
     cout << endl;
     }
 };
-
-
-
 int main()
 {
-    Lista <int> miLista;
-// llamadas a las funciones
-    miLista.agregarFinal(1);
-    miLista.agregarInicio(6);
-    miLista.agregarInicio(8);
-    miLista.agregarInicio(7); 
-    miLista.agregarFinal(10);
-    miLista.imprimir();
-    cout << "Num. Elementos: "<< miLista.numElementos()<< endl;
+    Lista <int> miLista ;
+    int N, dato;
+    string op;
+    cin >> N;
+    for (int i=0; i<N; i++){
+        cin >> op;
+        if (op=="AGREGAR_IZQ"){
+            cin >> dato;
+            miLista.agregarInicio(dato);      
+        }
+        else if ("AGREGAR_DER"){
+            cin >> dato;
+            miLista.agregarFinal(dato);      
+        }
+        else if ("QUITAR_PRIMER"){
+           cout << miLista.eliminarInicio() << "*";
+        }
+        else {
+            cout << miLista.eliminarFinal() << "*";
+        }
+    }
 
-    cout << "Sale: " << miLista.eliminarFinal()<< endl;
-   // cout << "Sale: " <<miLista.eliminarInicio()<< endl;
-   miLista.imprimir();
-    cout << "Sale: " << miLista.eliminarFinal()<< endl;
-   miLista.imprimir();
-    cout << "Sale: " << miLista.eliminarFinal()<< endl;
-   miLista.imprimir();
-    cout << "Sale: " << miLista.eliminarFinal()<< endl;
-   miLista.imprimir();
-       cout << "Num. Elementos: "<< miLista.numElementos()<< endl;
-   cout << miLista.esVacia() << endl; 
-
-    // cout << "Sale: " <<miLista.eliminarFinal()<< endl;
-    
+    cout << endl;
 
     return 0;
 }
