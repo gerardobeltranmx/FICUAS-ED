@@ -51,6 +51,44 @@ class Lista {
        else   
             agregarInicio(dato);
     }
+ void agregarOrdenado(T dato){
+        Nodo  *act, *ant, *nuevo;
+        bool enc=false;
+        act = Raiz;
+        ant = NULL;
+
+        if (esVacia()){ // si es vacia lo agrega al inicio
+            agregarInicio(dato);
+            cout << "Vacia" << endl;
+        } 
+        else { // busca donde agregarlo
+            cout << "Busca" << endl;
+            while(act!=NULL and enc == false){
+            if (act->info>dato)
+                    enc=true;
+            else {
+                ant = act;    
+                act = act->enl;
+            }
+       
+        }
+        if (ant==NULL){  // el primero es mayor 
+          agregarInicio(dato);
+        }
+        else {
+            nuevo = nuevoNodo(dato);
+            ant->enl = nuevo;
+            nuevo->enl = act;
+
+        }
+        }                 
+     
+        
+    }
+
+
+
+
 
     T eliminarInicio(){
         Nodo *aux;
@@ -68,9 +106,7 @@ class Lista {
         sig = Raiz->enl;
         if(sig==NULL){
             eliminarInicio();
-            /*dato = act->info; 
-            delete act;
-            Raiz=NULL;*/
+            
         }
         else if(sig->enl==NULL){
             dato = sig->info;
@@ -154,15 +190,24 @@ int main()
 {
     Lista <int> miLista;
 // llamadas a las funciones
-    miLista.agregarFinal(1);
+    /* miLista.agregarFinal(1);
     miLista.agregarInicio(6);
     miLista.agregarInicio(8);
     miLista.agregarInicio(7); 
     miLista.agregarFinal(10);
-    miLista.imprimir();
+    miLista.imprimir(); */
 
+    miLista.agregarOrdenado(4);
+    miLista.agregarOrdenado(3);
+    miLista.agregarOrdenado(8);
+   /* miLista.agregarOrdenado(1);
+    miLista.agregarOrdenado(23);
+    miLista.agregarOrdenado(13);
+    miLista.agregarOrdenado(25);
+    miLista.agregarOrdenado(11);
+    */
 
-    cout << "Sale: " << miLista.eliminarValor(8)<< endl;
+    //cout << "Sale: " << miLista.eliminarValor(8)<< endl;
     miLista.imprimir();
 
    /*  cout << "Num. Elementos: "<< miLista.numElementos()<< endl;
