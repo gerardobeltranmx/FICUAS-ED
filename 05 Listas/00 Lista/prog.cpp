@@ -118,7 +118,7 @@ int main()
 
     Lista <int> miLista;
 // llamadas a las funciones
-    miLista.agregarFinal(1);
+    miLista.agregarFinal  qq  (1);
     miLista.agregarInicio(6);
     miLista.agregarInicio(8);
     miLista.agregarInicio(7); 
