@@ -10,9 +10,14 @@ class Lista {
         Nodo *enl;
     };
     Nodo *Raiz;
+    int tam;
     public:
     Lista(){
         Raiz = NULL;
+        tam=0;
+    }
+    ~Lista(){
+        eliminarTodos();
     }
 
     void agregarInicio(T dato){
@@ -23,6 +28,7 @@ class Lista {
          //  nuevo->enl = NULL;
         nuevo->enl = Raiz;
         Raiz = nuevo;
+        tam++;
     }
 
     T eliminarInicio(){
@@ -32,6 +38,7 @@ class Lista {
         Raiz = Raiz->enl;
         dato = aux->info;
         delete aux;
+        tam--;
         return dato;
     }
     void agregarFinal(T dato){
@@ -50,7 +57,9 @@ class Lista {
           nuevo->enl = NULL;
           // colocamos al final 
           aux->enl = nuevo;
-       }     
+          tam++; 
+
+       }    
     }
     T eliminarFinal(){
         Nodo *act, *sig;
@@ -65,6 +74,7 @@ class Lista {
             dato = sig->info;
             delete sig;
             act->enl =NULL; 
+            tam--;
         }
         else { // 3 o mas nodos
             while (sig->enl != NULL){
@@ -74,10 +84,20 @@ class Lista {
             dato = sig->info;
             delete sig;
             act->enl =NULL;
+            tam--;
         }
         return dato;
     }
 
+    void eliminarTodos(){
+        Nodo *aux;
+        while (Raiz!=NULL){
+            aux = Raiz;
+            Raiz = Raiz->enl;
+            delete aux;
+        }
+        tam=0;
+    }
     void imprimir(){
         Nodo *aux;
         aux = Raiz;
@@ -88,6 +108,15 @@ class Lista {
         }
         cout << endl;
     }
+    int obtenerNumElementos(){
+        return tam;|
+    }
+
+    bool esVacia(){
+        //return tam == 0?true:false;
+          return Raiz==NULL?true:false;  
+    }
+
 };
 
 int main()
@@ -105,13 +134,19 @@ int main()
     miLista.agregarFinal(40);
     miLista.agregarInicio(54); 
     miLista.imprimir();
+    miLista.eliminarTodos();
+    cout << "Lista vacia: " << endl;
+    miLista.imprimir();
+    
+
+    /*
     cout << "Se elimino del inicio el: " << miLista.eliminarInicio()<< endl;
     miLista.imprimir();
     cout << "Se elimino  del inicio el: " << miLista.eliminarInicio()<< endl;
     miLista.imprimir();
     cout << "Se elimino del final el: " << miLista.eliminarFinal()<< endl;
     miLista.imprimir();
-        
+    */    
     
 
     return 0;
