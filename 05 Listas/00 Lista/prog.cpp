@@ -117,6 +117,25 @@ class Lista {
           return Raiz==NULL?true:false;  
     }
 
+
+    int buscarPorValor(T valor){
+        Nodo *aux = Raiz;
+        bool enc = false;
+        int cont=0;
+        while (aux!=NULL and enc == false){
+            if (aux->info == valor){
+               enc = true;     
+            }
+            else{
+                aux= aux->enl;
+                cont++;
+            }
+        }
+        return enc==true?cont:-1;
+    }
+
+
+
 };
 
 int main()
