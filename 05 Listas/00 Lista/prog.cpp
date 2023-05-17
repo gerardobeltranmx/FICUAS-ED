@@ -109,7 +109,7 @@ class Lista {
         cout << endl;
     }
     int obtenerNumElementos(){
-        return tam;|
+        return tam;
     }
 
     bool esVacia(){
@@ -153,10 +153,15 @@ int main()
     miLista.agregarFinal(40);
     miLista.agregarInicio(54); 
     miLista.imprimir();
-    miLista.eliminarTodos();
-    cout << "Lista vacia: " << endl;
-    miLista.imprimir();
+    //miLista.eliminarTodos();
+  cout << "Buscar por valor:" ;
+  cout << miLista.buscarPorValor(711) << endl;
+
+   // cout << "Lista vacia: " << endl;
+//    miLista.imprimir();
     
+
+
 
     /*
     cout << "Se elimino del inicio el: " << miLista.eliminarInicio()<< endl;
