@@ -162,7 +162,6 @@ int main()
     
 
 
-
     /*
     cout << "Se elimino del inicio el: " << miLista.eliminarInicio()<< endl;
     miLista.imprimir();
