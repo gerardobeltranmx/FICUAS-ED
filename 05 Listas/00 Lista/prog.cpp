@@ -117,6 +117,28 @@ class Lista {
           return Raiz==NULL?true:false;  
     }
 
+    bool buscarPorIndice(int indice, T &dato){
+        Nodo *aux = Raiz;
+        int cont=0;
+        bool enc=false;
+
+        for (int i=0; i<obtenerNumElementos() and enc==false; i++ ){
+                if (i==indice){
+                    enc = true;
+                    dato = aux->info;
+                }    
+                else
+                    aux = aux->enl;    
+        }
+
+        return enc; 
+
+
+        
+
+    }
+
+
 
     int buscarPorValor(T valor){
         Nodo *aux = Raiz;
@@ -156,6 +178,14 @@ int main()
     //miLista.eliminarTodos();
   cout << "Buscar por valor:" ;
   cout << miLista.buscarPorValor(711) << endl;
+
+  cout << "Buscar por indice:";
+    int dato;
+    if (miLista.buscarPorIndice(10, dato)==true)
+        cout << dato<< endl;
+    else
+        cout << "No esta :(" << endl;    
+
 
    // cout << "Lista vacia: " << endl;
 //    miLista.imprimir();
