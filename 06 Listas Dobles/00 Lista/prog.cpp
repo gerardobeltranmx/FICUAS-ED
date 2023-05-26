@@ -38,7 +38,24 @@ class ListaDoble {
      tam++;
     }
 
-
+ T eliminarInicio(){
+      Nodo *primero, temp;
+      primero = Raiz;
+      if (primero!=NULL){
+        temp=primero->sig; // Guarda dirección el segundo nodo
+        dato = primero->info;
+        delete primero; // Libera la memoria del primer nodo
+        primero=temp; // El segundo nodo pasa a ser el primero
+        if(primero!=NULL){ //Pregunta si no quedo vacía
+            Raiz=primero; //Cambia la dirección del inicio de lista
+	        primero->ant = NULL;
+        }
+        else{
+            Raiz=NULL;
+        }
+        tam--;
+        return dato;
+    }
  void imprimir(){
         Nodo *aux;
         aux = Raiz;
