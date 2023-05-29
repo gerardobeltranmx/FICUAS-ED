@@ -120,35 +120,6 @@ int main()
     
     return 0;
 
-   /*  miLista.agregarFinal(20);
-    miLista.agregarFinal(30);
-    miLista.agregarFinal(40);
-    miLista.agregarInicio(54);  */
-    //miLista.eliminarTodos();
-  /* cout << "Buscar por valor:" ;
-  cout << miLista.buscarPorValor(711) << endl;
-
-  cout << "Buscar por indice:";
-    int dato;
-    if (miLista.buscarPorIndice(10, dato)==true)
-        cout << dato<< endl;
-    else
-        cout << "No esta :(" << endl;    
- */
-
-   // cout << "Lista vacia: " << endl;
-//    miLista.imprimir();
-    
-
-
-    /*
-    cout << "Se elimino del inicio el: " << miLista.eliminarInicio()<< endl;
-    miLista.imprimir();
-    cout << "Se elimino  del inicio el: " << miLista.eliminarInicio()<< endl;
-    miLista.imprimir();
-    cout << "Se elimino del final el: " << miLista.eliminarFinal()<< endl;
-    miLista.imprimir();
-    */    
-    
+   
 
 }
