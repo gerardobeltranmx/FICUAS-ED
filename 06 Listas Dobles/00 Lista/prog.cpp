@@ -126,16 +126,30 @@ public:
         return Raiz == NULL ? true : false;
     }
 
-    int obtenerNumElementos()
-    {
-        return tam;
+    void intercambiar(int pos1, int pos2){
+        Nodo *aux = Raiz;
+        Nodo *nodo1, *nodo2;
+        T dato;
+        int cont=0;
+        bool enc = false;
+        while (aux !=NULL and enc==false){
+            if (cont==pos1){
+                nodo1=aux;
+            }
+            if (cont==pos2){
+                nodo2=aux;
+                enc=true;
+            }
+            cont++;
+            aux = aux->sig;
+        }    
+        dato = nodo1->info;
+        nodo1->info = nodo2->info;
+        nodo2->info = dato;
     }
 
-    bool esVacia()
-    {
-        // return tam == 0?true:false;
-        return Raiz == NULL ? true : false;
-    }
+   
+
 };
 
 int main()
@@ -152,12 +166,6 @@ int main()
     miLista.invertir();
     cout << "nueva lista " << endl;
     miLista.imprimir();
-    miLista.eliminarInicio();
-    cout << "nueva lista " << endl;
-    miLista.imprimir();
-    miLista.eliminarInicio();
-    cout << "nueva lista " << endl;
-    miLista.imprimir();
-
+    
     return 0;
 }
