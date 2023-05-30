@@ -142,14 +142,12 @@ public:
             }
             cont++;
             aux = aux->sig;
-        }    
+        }
+        // intercambio de valores 
         dato = nodo1->info;
         nodo1->info = nodo2->info;
         nodo2->info = dato;
     }
-
-   
-
 };
 
 int main()
@@ -166,6 +164,8 @@ int main()
     miLista.invertir();
     cout << "nueva lista " << endl;
     miLista.imprimir();
-    
+    miLista.intercambiar(1,2);
+    miLista.imprimir();
+
     return 0;
 }
